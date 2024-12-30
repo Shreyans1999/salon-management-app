@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Salon Booking</title>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow-lg mb-8">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex items-center py-4">
+                    <a href="../dashboard/user/index.html" class="text-gray-500 hover:text-gray-700">
+                        ← Back to Dashboard
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4">
+        <h1 class="text-3xl font-bold mb-8">Our Services</h1>
+
+        <!-- Services Categories -->
+        <div class="mb-8">
+            <div class="flex space-x-4" id="categoryFilters">
+                <button class="px-4 py-2 rounded-full bg-blue-500 text-white" data-category="all">
+                    All
+                </button>
+                <button class="px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300" data-category="hair">
+                    Hair
+                </button>
+                <button class="px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300" data-category="nails">
+                    Nails
+                </button>
+                <button class="px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300" data-category="spa">
+                    Spa
+                </button>
+            </div>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="servicesList">
+            <!-- Services will be loaded here -->
+        </div>
+    </div>
+
+    <script src="list.js"></script>
+</body>
+</html>

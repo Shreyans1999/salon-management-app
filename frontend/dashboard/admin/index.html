@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Salon Booking</title>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex items-center py-4">
+                    <span class="font-semibold text-gray-500 text-lg">Admin Dashboard</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="logoutBtn" class="py-2 px-4 bg-red-500 text-white rounded hover:bg-red-600">
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Services Management -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-bold mb-4">Services Management</h2>
+                <form id="serviceForm" class="mb-4">
+                    <div class="grid grid-cols-1 gap-4">
+                        <input type="text" id="serviceName" placeholder="Service Name" 
+                               class="border p-2 rounded">
+                        <textarea id="serviceDescription" placeholder="Description" 
+                                  class="border p-2 rounded"></textarea>
+                        <input type="number" id="serviceDuration" placeholder="Duration (minutes)" 
+                               class="border p-2 rounded">
+                        <input type="number" id="servicePrice" placeholder="Price" 
+                               class="border p-2 rounded">
+                        <button type="submit" 
+                                class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+                            Add Service
+                        </button>
+                    </div>
+                </form>
+                <div id="servicesList" class="space-y-2">
+                    <!-- Services will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Staff Management -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-bold mb-4">Staff Management</h2>
+                <form id="staffForm" class="mb-4">
+                    <div class="grid grid-cols-1 gap-4">
+                        <input type="text" id="staffName" placeholder="Staff Name" 
+                               class="border p-2 rounded">
+                        <input type="text" id="specialization" placeholder="Specialization" 
+                               class="border p-2 rounded">
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="time" id="workingHoursStart" class="border p-2 rounded">
+                            <input type="time" id="workingHoursEnd" class="border p-2 rounded">
+                        </div>
+                        <button type="submit" 
+                                class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+                            Add Staff Member
+                        </button>
+                    </div>
+                </form>
+                <div id="staffList" class="space-y-2">
+                    <!-- Staff members will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Appointments Overview -->
+        <div class="mt-8 bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-bold mb-4">Today's Appointments</h2>
+            <div id="appointmentsList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Appointments will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Reviews Management -->
+        <div class="mt-8 bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-bold mb-4">Recent Reviews</h2>
+            <div id="reviewsList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Reviews will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

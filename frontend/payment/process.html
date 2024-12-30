@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Salon Booking</title>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-md mx-auto">
+            <h1 class="text-3xl font-bold mb-8">Complete Payment</h1>
+            
+            <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <div id="paymentDetails" class="mb-6">
+                    <!-- Payment details will be loaded here -->
+                </div>
+
+                <form id="paymentForm">
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">
+                            Card Information
+                        </label>
+                        <div id="card-element" class="border rounded p-3">
+                            <!-- Stripe Card Element will be inserted here -->
+                        </div>
+                        <div id="card-errors" class="text-red-500 text-sm mt-2"></div>
+                    </div>
+
+                    <button type="submit"
+                            class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        Pay Now
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="process.js"></script>
+</body>
+</html>
