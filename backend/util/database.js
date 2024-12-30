@@ -27,28 +27,15 @@ const sequelize = new Sequelize(
     }
 );
 
-// Test database connection
 async function testConnection() {
-    try {
-        await sequelize.authenticate();
-        console.log('Database connection established successfully.');
-    } catch (error) {
-        console.error('Unable to connect to the database:', error);
-    }
+  try {
+    await sequelize.authenticate();
+    console.log('Database connection established successfully.');
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+  }
 }
 
 testConnection();
-
-// Sync all models
-// Note: In production, you should use migrations instead
-if (process.env.NODE_ENV !== 'production') {
-    sequelize.sync({ alter: true })
-        .then(() => {
-            console.log('Database synchronized');
-        })
-        .catch(err => {
-            console.error('Error synchronizing database:', err);
-        });
-}
 
 module.exports = sequelize;
